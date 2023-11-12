@@ -1,6 +1,5 @@
 import { Box } from '@mui/material'
-import NavBar from './common/NavBar'
-import TemporaryDrawer from './common/Ejemplo'
+import NavBar from './components/NavBar/NavBar'
 
 import './App.css'
 
@@ -9,7 +8,6 @@ function App(): JSX.Element {
     <>
       <Box>
         <NavBar />
-        <TemporaryDrawer />
       </Box>
     </>
   )
