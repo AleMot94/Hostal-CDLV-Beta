@@ -7,17 +7,16 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-// Button Grups
 import Button from '@mui/material/Button'
-import ButtonGroup from '@mui/material/ButtonGroup'
 import Box from '@mui/material/Box'
+// import Menu from '@mui/material/Menu'
+// import MenuItem from '@mui/material/MenuItem'
+import Drawer from '@mui/material/Drawer'
 
-const pages = ['Products', 'Pricing', 'Blog']
+// const pages = ['Products', 'Pricing', 'Blog']
 
 const NavBar: React.FC = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
+  /*   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
@@ -25,7 +24,45 @@ const NavBar: React.FC = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
-  }
+  } */
+
+  /* ;<Menu
+    id='menu-appbar'
+    anchorEl={anchorElNav}
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'left'
+    }}
+    keepMounted
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'left'
+    }}
+    open={Boolean(anchorElNav)}
+    onClose={handleCloseNavMenu}
+    sx={{
+      display: { xs: 'block', md: 'none' }
+    }}
+  >
+    {pages.map((page) => (
+      <MenuItem key={page} onClick={handleCloseNavMenu}>
+        <Button>{page}</Button>
+      </MenuItem>
+    ))}
+  </Menu> 
+  
+  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
+  */
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -37,8 +74,6 @@ const NavBar: React.FC = () => {
               edge='start'
               color='inherit'
               aria-label='menu'
-              onClick={handleOpenNavMenu}
-              aria-controls='menu-appbar'
               sx={{ mr: 2, display: { md: 'none' } }}
             >
               <MenuIcon />
@@ -65,43 +100,6 @@ const NavBar: React.FC = () => {
                 LOGO
               </Typography>
             </Stack>
-
-            <Menu
-              id='menu-appbar'
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left'
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left'
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' }
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {page}
-                </Button>
-              ))}
-            </Box>
           </Container>
         </Toolbar>
       </AppBar>

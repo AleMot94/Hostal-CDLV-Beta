@@ -17,6 +17,15 @@ const theme = createTheme({
     primary: {
       main: themePalette.PRIMARY_MAIN_COLOR
     }
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        style: {
+          textTransform: 'none'
+        }
+      }
+    }
   }
 })
 
