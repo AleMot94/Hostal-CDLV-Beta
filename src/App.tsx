@@ -5,11 +5,9 @@ import './App.css'
 
 function App(): JSX.Element {
   return (
-    <>
-      <Box>
-        <NavBar />
-      </Box>
-    </>
+    <Box>
+      <NavBar />
+    </Box>
   )
 }
 

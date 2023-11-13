@@ -5,8 +5,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 import { useToggleDrawer } from '../../hook/useToggleDrawer'
-
-const listOne = ['Inicio', 'Habitaciones', 'Galeria', 'Ubicación', 'Contacto']
+import { listMenu } from './listMenuText.d'
 
 export const ListMenuMobile: React.FC = () => {
   const { toggleDrawer } = useToggleDrawer()
@@ -19,11 +18,11 @@ export const ListMenuMobile: React.FC = () => {
       sx={{ width: '230px' }}
     >
       <List>
-        {listOne.map((text) => (
-          <ListItem key={text} disablePadding>
+        {listMenu.map((text) => (
+          <ListItem key={text.text} disablePadding>
             <ListItemButton>
-              <Link href='#' underline='none'>
-                {text}
+              <Link href={text.path} underline='none'>
+                {text.text}
               </Link>
             </ListItemButton>
           </ListItem>

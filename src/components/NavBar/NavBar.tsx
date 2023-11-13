@@ -7,6 +7,7 @@ import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import { MenuDrawerMobile } from './MenuDrawerMobile'
+import { ListMenuWeb } from './ListMenuWeb'
 
 const NavBar: React.FC = () => {
   return (
@@ -37,6 +38,8 @@ const NavBar: React.FC = () => {
                 LOGO
               </Typography>
             </Stack>
+
+            <ListMenuWeb />
           </Container>
         </Toolbar>
       </AppBar>
