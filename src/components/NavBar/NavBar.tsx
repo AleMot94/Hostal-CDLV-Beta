@@ -9,10 +9,10 @@ import Box from '@mui/material/Box'
 import { MenuDrawerMobile } from './MenuDrawerMobile'
 import { ListMenuWeb } from './ListMenuWeb'
 
-const NavBar: React.FC = () => {
+export const NavBar: React.FC = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar>
+      <AppBar position='static'>
         <Toolbar>
           <Container maxWidth='xl' sx={{ display: 'flex' }}>
             <MenuDrawerMobile />
@@ -46,5 +46,3 @@ const NavBar: React.FC = () => {
     </Box>
   )
 }
-
-export default NavBar
