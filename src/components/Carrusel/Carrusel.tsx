@@ -2,8 +2,6 @@ import * as React from 'react'
 import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import MobileStepper from '@mui/material/MobileStepper'
-import Paper from '@mui/material/Paper'
-import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
@@ -54,19 +52,6 @@ export const Carrusel: React.FC = () => {
 
   return (
     <Box sx={{ maxWidth: '100%', flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default'
-        }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
@@ -79,7 +64,7 @@ export const Carrusel: React.FC = () => {
               <Box
                 component='img'
                 sx={{
-                  height: 255,
+                  height: 350,
                   display: 'block',
                   maxWidth: '100%',
                   overflow: 'hidden',

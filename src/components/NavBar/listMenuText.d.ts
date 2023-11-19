@@ -12,7 +12,7 @@ export const listMenu: ListMenuType = [
   },
   {
     text: 'Habitaciones',
-    path: '#'
+    path: '/#Habitaciones'
   },
   {
     text: 'Galeria',
