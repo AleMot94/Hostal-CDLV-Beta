@@ -13,8 +13,8 @@ export const ListMenuMobile: React.FC = () => {
   return (
     <Box
       role='presentation'
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
+      onClick={() => toggleDrawer(false)}
+      onKeyDown={() => toggleDrawer(false)}
       sx={{ width: '230px' }}
     >
       <List>
