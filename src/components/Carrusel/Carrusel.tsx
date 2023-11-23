@@ -64,7 +64,7 @@ export const Carrusel: React.FC = () => {
               <Box
                 component='img'
                 sx={{
-                  height: 350,
+                  height: { sm: 540, xl: 750 },
                   display: 'block',
                   maxWidth: '100%',
                   overflow: 'hidden',
