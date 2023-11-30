@@ -16,7 +16,7 @@ export const listMenu: ListMenuType = [
   },
   {
     text: 'Galeria',
-    path: '#'
+    path: '/#Galeria'
   },
   {
     text: 'Ubicación',

@@ -94,7 +94,7 @@ export const Galeria: React.FC = () => {
   }
 
   return (
-    <Box>
+    <Box id='Galeria'>
       <Typography>Galeria</Typography>
 
       <ListButtons categorys={allCategorys} filterCategory={filterCategory} />
