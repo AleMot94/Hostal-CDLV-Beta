@@ -1,25 +1,20 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { CardHabitacion } from './CardHabitacion'
-
-const listImagenes = [
-  'imagenes/eva01.jpg',
-  'imagenes/golden.jpg',
-  'imagenes/astronauta.jpg',
-  'imagenes/sharpey.png'
-]
-const baseUrl = import.meta.env.BASE_URL
+import { useBedrooms } from '../../hooks/useGetBedrooms'
 
 export const Habitaciones: React.FC = () => {
+  const { bedrooms } = useBedrooms()
+
   return (
     <Box id='Habitaciones'>
       <Typography>Habitaciones</Typography>
       <Grid container spacing={2} direction='row' justifyContent={'center'}>
-        {listImagenes.map((img) => (
-          <Grid item key={img}>
-            <CardHabitacion img={baseUrl + img} />
+        {bedrooms.map((bedroom) => (
+          <Grid item key={bedroom.id}>
+            <CardHabitacion bedroom={bedroom} />
           </Grid>
         ))}
       </Grid>

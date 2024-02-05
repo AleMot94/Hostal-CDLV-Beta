@@ -6,16 +6,28 @@ import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
-interface imgInter {
-  img: string
+const baseUrl = 'http://localhost:8000/'
+
+interface Bedroom {
+  id: string
+  name: string
+  description: string
+  category: string
+  image: string
 }
 
-type imgProps = imgInter
+interface BedroomProps {
+  bedroom: Bedroom
+}
 
-export const CardHabitacion: React.FC<imgProps> = ({ img }) => {
+export const CardHabitacion: React.FC<BedroomProps> = ({ bedroom }) => {
   return (
     <Card sx={{ maxWidth: 220, padding: 0 }}>
-      <CardMedia sx={{ height: 140 }} image={img} title='green iguana' />
+      <CardMedia
+        sx={{ height: 140 }}
+        image={baseUrl + bedroom.image}
+        title='green iguana'
+      />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>
           Lizard
