@@ -20,18 +20,19 @@ export const useBedrooms = (): UseBedroomsResult => {
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      try {
-        const fetchedBedrooms = await getBedrooms()
-        setBedrooms(fetchedBedrooms)
-      } catch (error) {
-        setError('Algo salió mal con la obtención de datos de las habitaciones')
-      } finally {
-        setLoading(false)
-      }
+  const fetchData = async (): Promise<void> => {
+    try {
+      setLoading(true)
+      const fetchedBedrooms = await getBedrooms()
+      setBedrooms(fetchedBedrooms)
+    } catch (error) {
+      setError('No se encontraron datos')
+    } finally {
+      setLoading(false)
     }
+  }
 
+  useEffect(() => {
     void fetchData()
   }, [])
 
