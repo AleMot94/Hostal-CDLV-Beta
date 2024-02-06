@@ -3,6 +3,7 @@ import { NavBar } from './components/NavBar/NavBar'
 import { Carrusel } from './components/Carrusel/Carrusel'
 import { Habitaciones } from './components/Habitaciones/Habitaciones'
 import { Galeria } from './components/Galeria/Galeria'
+import { MapView } from './components/MapView/MapView'
 import './App.css'
 
 function App(): JSX.Element {
@@ -12,6 +13,7 @@ function App(): JSX.Element {
       <Carrusel />
       <Habitaciones />
       <Galeria />
+      <MapView />
     </Box>
   )
 }
