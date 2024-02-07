@@ -6,7 +6,13 @@ import 'leaflet/dist/leaflet.css'
 
 export const MapView: React.FC = () => {
   return (
-    <Box>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
+    >
       <Typography>Ubicación</Typography>
       <MapContainer
         center={{ lat: -25.885439011392336, lng: -65.93038216849955 }}
