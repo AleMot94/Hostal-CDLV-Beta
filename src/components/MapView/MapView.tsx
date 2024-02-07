@@ -15,7 +15,7 @@ export const MapView: React.FC = () => {
     >
       <Typography>Ubicación</Typography>
       <MapContainer
-        center={{ lat: -25.885439011392336, lng: -65.93038216849955 }}
+        center={{ lat: -25.886421301884777, lng: -65.93080890153381 }}
         zoom={15}
         style={{ height: '400px', width: '80%' }}
       >
@@ -24,7 +24,7 @@ export const MapView: React.FC = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker
-          position={{ lat: -25.885439011392336, lng: -65.93038216849955 }}
+          position={{ lat: -25.886421301884777, lng: -65.93080890153381 }}
         >
           <Popup>
             La Casa de los Vientos <br /> Hostería Rural
