@@ -70,12 +70,12 @@ export const Formulario: React.FC = () => {
   return (
     <Formik
       initialValues={{
-        firstName: '',
+        name: '',
         message: '',
         email: ''
       }}
       validationSchema={Yup.object({
-        firstName: Yup.string()
+        name: Yup.string()
           .max(15, 'Must be 15 characters or less')
           .required('Required'),
         message: Yup.string()
@@ -99,7 +99,7 @@ export const Formulario: React.FC = () => {
             >
               <MyTextInput
                 label='Nombre'
-                name='firstName'
+                name='name'
                 type='text'
                 placeholder='Jane'
               />
