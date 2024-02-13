@@ -8,7 +8,8 @@ interface Gallery {
 }
 
 interface UseGalleryResult {
-  gallery: Gallery[]
+  categoryGallery: Gallery[]
+  categoryFilter: (category: string) => void
   loading: boolean
   error: string | null
 }
@@ -17,12 +18,14 @@ export const useGallery = (): UseGalleryResult => {
   const [gallery, setGallery] = useState<Gallery[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
+  const [categoryGallery, setCategory] = useState<Gallery[]>([])
 
   const fetchData = async (): Promise<void> => {
     try {
       setLoading(true)
       const fetchedGallery = await getGallery()
       setGallery(fetchedGallery)
+      setCategory(fetchedGallery)
     } catch (error) {
       setError('No se encontraron datos')
     } finally {
@@ -30,9 +33,21 @@ export const useGallery = (): UseGalleryResult => {
     }
   }
 
+  const categoryFilter = (category: string): void => {
+    if (category === 'todo') {
+      setCategory(gallery)
+    } else {
+      const pictureCategory = gallery.filter(
+        (picture) => picture.category === category
+      )
+      setCategory(pictureCategory)
+    }
+  }
+
   useEffect(() => {
     void fetchData()
+    categoryFilter('todo')
   }, [])
 
-  return { gallery, loading, error }
+  return { categoryGallery, categoryFilter, loading, error }
 }
